@@ -2,8 +2,16 @@ import React from 'react'
 
 const Home = () => {
   return (
-    <div>
-      
+    <div className='min-h-screen'>
+      {/* Modo oscuro */}
+
+      {/* Efectos del Background */}
+
+      {/* Navbar */}
+
+      {/* Contenido Principal */}
+
+      {/* Footer */}
     </div>
   )
 }
