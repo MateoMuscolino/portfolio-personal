@@ -27,7 +27,7 @@ export const HeroSection = () => {
                     <p className="text-lg md:text-xl text-muted-foreground max-2-2xl mx-auto opacity-0 animate-fade-in-delay-3">
                         {language === 'en'
                         ? "I create web experiences using modern technologies. Focused on learning, building, and growing every day as a developer"
-                        : "Creo experiencias web utilizando tecnologías modernas. Enfocado en aprender, crear y crecer cada día como desarrollador"}
+                        : "Diseño y desarrollo aplicaciones web aplicando buenas prácticas y tecnologías modernas"}
                     </p>
 
                     <div className="pt-4 opacity-0 animate-fade-in-delay-4">
