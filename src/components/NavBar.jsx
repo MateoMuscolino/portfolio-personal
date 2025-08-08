@@ -10,7 +10,7 @@ const navItems = [
   { name: { en: "About", es: "Sobre mí" }, href: "#about" },
   { name: { en: "Skills", es: "Habilidades" }, href: "#skills" },
   { name: { en: "Projects", es: "Proyectos" }, href: "#projects" },
-  { name: { en: "Contact", es: "Contacto" }, href: "#Contact" },
+  { name: { en: "Contact", es: "Contacto" }, href: "#contact" },
 ];
 
 const NavBar = () => {
