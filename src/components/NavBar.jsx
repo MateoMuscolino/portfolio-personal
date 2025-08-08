@@ -13,7 +13,7 @@ const navItems = [
   { name: { en: "Contact", es: "Contacto" }, href: "#Contact" },
 ];
 
-const NavBarImproved = () => {
+const NavBar = () => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const { language } = useLanguage();
@@ -122,4 +122,4 @@ const NavBarImproved = () => {
   );
 };
 
-export default NavBarImproved;
+export default NavBar;
