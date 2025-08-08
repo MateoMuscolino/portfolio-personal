@@ -1,6 +1,7 @@
 import { useState } from "react";
 import React from 'react'
 import { cn } from "./lib/utils";
+import useLanguage from "../context/useLanguage";
 
 const skills = [
     { name: 'HTML/CSS', level: 85, category: 'frontend' },
@@ -8,7 +9,6 @@ const skills = [
     { name: 'React', level: 75, category: 'frontend' },
     { name: 'Tailwind CSS', level: 70, category: 'frontend' },
     { name: 'TypeScript (learning)', level: 40, category: 'frontend' },
-
 
     { name: 'Node.js', level: 70, category: 'backend' },
     { name: 'Express', level: 70, category: 'backend' },
@@ -24,15 +24,27 @@ const skills = [
     { name: 'Teamwork & Communication', level: 80, category: 'other' }
 ];
 
-const categories = ['all', 'frontend', 'backend', 'other']
-
+// traduccion de las categorias
+const categoriesLabels = {
+    en: { all: "all", frontend: "frontend", backend: "backend", other: "other" },
+    es: { all: "todas", frontend: "frontend", backend: "backend", other: "otras" }
+};
+const sectionTitles = {
+    en: "My Skills",
+    es: "Mis Habilidades"
+};
 
 const SkillsSection = () => {
-    const [activeCategory, setActiveCategory] = useState('all')
+    const [activeCategory, setActiveCategory] = useState('all');
+    const { language } = useLanguage();
 
     const filteredSkills = skills.filter(
         (skill => activeCategory === 'all' || skill.category === activeCategory)
     );
+
+    // para mostrar las categorías traducidas
+    const categories = ['all', 'frontend', 'backend', 'other'];
+
     return (
         <section
             id='skills'
@@ -40,7 +52,7 @@ const SkillsSection = () => {
         >
             <div className='container mx-auto max-w-5xl'>
                 <h2 className='text-3xl md:text-4xl font-bold mb-12 text-center'>
-                    My <span className='text-primary'> Skills</span>
+                    {sectionTitles[language].split(" ")[0]} <span className='text-primary'>{sectionTitles[language].split(" ")[1]}</span>
                 </h2>
 
                 <div className="flex flex-wrap justify-center gap-4 mb-12">
@@ -54,10 +66,9 @@ const SkillsSection = () => {
                                     : 'bg-secondary/70 text-foreground hover:bd-secondary'
                             )}
                         >
-                            {category}
+                            {categoriesLabels[language][category]}
                         </button>
                     ))}
-
                 </div>
 
                 <div className='grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6'>
